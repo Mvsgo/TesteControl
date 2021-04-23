@@ -6,6 +6,28 @@
     app:startDestination="@id/blankFragment">
 
     <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.learn2crack.testecontrol.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank">
+        <action
+            android:id="@+id/action_blankFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+             />
+        <action
+            android:id="@+id/action_blankFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
+
+    <fragment
         android:id="@+id/FirstFragment"
         android:name="com.learn2crack.testecontrol.FirstFragment"
         android:label="@string/first_fragment_label"
@@ -15,7 +37,9 @@
             android:id="@+id/action_FirstFragment_to_blankFragment"
             app:destination="@id/blankFragment"
             app:popUpTo="@+id/blankFragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"/>
     </fragment>
 
     <fragment
@@ -28,23 +52,9 @@
             android:id="@+id/action_SecondFragment_to_blankFragment"
             app:destination="@id/blankFragment"
             app:popUpTo="@+id/blankFragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"/>
     </fragment>
 
-    <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.learn2crack.testecontrol.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
-        <action
-            android:id="@+id/action_blankFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
-        <action
-            android:id="@+id/action_blankFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
 </navigation>
